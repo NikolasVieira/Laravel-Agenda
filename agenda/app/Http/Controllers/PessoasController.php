@@ -11,7 +11,8 @@ class PessoasController extends Controller
 {
     public function index()
     {
-        //
+        $pessoa = Pessoa :: all();
+        return view('pessoa.index', compact('pessoa'));
     }
 
     public function create()
