@@ -6,7 +6,7 @@
 
     <h2>Agenda</h2>
     <hr/>
-    <a href="{{ url('pessoa/create') }}" class="btn btn-sucess">Novo Contato</a>
+    <a href="{​​​​​{​​​​​ url('pessoa/create') }​​​​​}​​​​​" class="btn btn-success">Novo Contato</a>
     <br/><br/>
 
     <table class="table">
