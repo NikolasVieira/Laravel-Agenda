@@ -30,7 +30,7 @@ class PessoasController extends Controller
         $pessoa->sobrenome = $request->input('sobrenome');
         $pessoa->telefone = $request->input('telefone');
         $pessoa->save();
-        return redirect()->route('produto.index', compact('pessoa'));
+        return redirect()->route('pessoa.index', compact('pessoa'));
     }
 
     public function show($id)
@@ -40,16 +40,32 @@ class PessoasController extends Controller
 
     public function edit($id)
     {
-        //
+        $pessoa = Pessoa::find($id);
+        if (isset($pessoa)) {
+            return view('pessoa.edit', compact('pessoa'));
+        }
+            return view('pessoa.index');
     }
 
-    public function update(Request $request, $id)
+    public function update(PessoaRequest $request, $id)
     {
-        //
+        $pessoa = Pessoa::find($id);
+        if (isset($pessoa)) {
+            $pessoa->nome = $request->input('nome');
+            $pessoa->sobrenome = $request->input('sobrenome');
+            $pessoa->telefone = $request->input('telefone');
+            $pessoa->save();
+        }
+            return redirect()->route('pessoa.index', compact('pessoa'));
     }
 
     public function destroy($id)
     {
-        //
+        $pessoa = Pessoa::find($id);
+        if (isset($pessoa)) {
+            $pessoa->delete();
+        }
+            return redirect()->route('pessoa.index');
+   
     }
 }

@@ -9,7 +9,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('pessoa', 'PessoasController');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('pessoa', 'PessoasController');
+Route::get('pessoa/delete/{id}', 'PessoasController@destroy');
