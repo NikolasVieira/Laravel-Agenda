@@ -12,16 +12,17 @@ class PessoasController extends Controller
 
     public function index()
     {
-        $pessoa = Pessoa::all();
+        $pessoa = Pessoa::All();
         return view('pessoa.index', compact('pessoa'));
     }
 
 
     public function create()
     {
-        $pessoa = Pessoa::all();
+        $pessoa = Pessoa::All();
         return view('pessoa.create', compact('pessoa'));
     }
+
 
     public function store(PessoaRequest $request)
     {
@@ -33,6 +34,7 @@ class PessoasController extends Controller
         return redirect()->route('pessoa.index', compact('pessoa'));
     }
 
+
     public function show($id)
     {
         //
@@ -41,7 +43,7 @@ class PessoasController extends Controller
     public function edit($id)
     {
         $pessoa = Pessoa::find($id);
-        if (isset($pessoa)) {
+        if(isset($pessoa)){
             return view('pessoa.edit', compact('pessoa'));
         }
             return view('pessoa.index');
@@ -66,6 +68,6 @@ class PessoasController extends Controller
             $pessoa->delete();
         }
             return redirect()->route('pessoa.index');
-   
+
     }
 }
