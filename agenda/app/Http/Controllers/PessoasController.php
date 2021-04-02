@@ -9,7 +9,6 @@ use App\Http\Requests\PessoaRequest;
 
 class PessoasController extends Controller
 {
-
     public function index()
     {
         $pessoa = Pessoa::All();

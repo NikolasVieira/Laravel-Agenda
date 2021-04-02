@@ -1,23 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PessoasController;
-
-
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('pessoa', 'PessoasController');
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('pessoa', 'PessoasController');
 Route::get('pessoa/delete/{id}', 'PessoasController@destroy');
 
-
+Route::resource('turma', 'TurmaController');
+Route::get('turma/delete/{id}', 'TurmaController@destroy');
 
 
 
