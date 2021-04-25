@@ -14,8 +14,3 @@ Route::get('pessoa/delete/{id}', 'PessoasController@destroy');
 
 Route::resource('turma', 'TurmaController');
 Route::get('turma/delete/{id}', 'TurmaController@destroy');
-
-
-
-
-

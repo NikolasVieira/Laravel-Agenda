@@ -4,9 +4,9 @@
 
 <div class="container">
     <h2>Agenda</h2>
-    <hr/>
+    <hr />
     <a href="{{ url('pessoa/create') }}" class="btn btn-success">Novo Contato</a>
-<br/><br/>
+    <br /><br />
     <table class="table">
         <thead class="thead-dark">
             <tr>
