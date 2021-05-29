@@ -18,11 +18,13 @@
                 <label for="nome">Nome</label>
                 <input type="text" class="form-control" id="nome" name="nome" value="{{$pessoa->nome}}">
             </div>
+            
             <div class="form-group col">
                 <label for="sobrenome">Sobrenome</label>
                 <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="{{$pessoa->sobrenome}}">
             </div>
         </div>
+
         <div class="row">
             <div class="form-group col">
                 <label for="telefone">Telefone</label>
@@ -42,6 +44,7 @@
                 </select>
             </div>
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

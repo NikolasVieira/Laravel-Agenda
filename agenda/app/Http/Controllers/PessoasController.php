@@ -19,7 +19,7 @@ class PessoasController extends Controller
     {
         $turma = Turma::all();
         $pessoa = Pessoa::All();
-        return view('pessoa.create', compact('pessoa','turma'));
+        return view('pessoa.create', compact('pessoa', 'turma'));
     }
 
     public function store(PessoaRequest $request)
@@ -29,8 +29,8 @@ class PessoasController extends Controller
         $pessoa->sobrenome  = $request->input('sobrenome');
         $pessoa->telefone   = $request->input('telefone');
         $pessoa->turma_id   = $request->input('turma_id');
-
         $pessoa->save();
+        
         return redirect()->route('pessoa.index', compact('pessoa'));
     }
 
@@ -43,10 +43,10 @@ class PessoasController extends Controller
     {
         $turma = Turma::all();
         $pessoa = Pessoa::find($id);
-        if(isset($pessoa)){
-            return view('pessoa.edit', compact('pessoa','turma'));
+        if (isset($pessoa)) {
+            return view('pessoa.edit', compact('pessoa', 'turma'));
         }
-            return view('pessoa.index');
+        return view('pessoa.index');
     }
 
     public function update(PessoaRequest $request, $id)
@@ -59,7 +59,7 @@ class PessoasController extends Controller
             $pessoa->turma_id   = $request->input('turma_id');
             $pessoa->save();
         }
-            return redirect()->route('pessoa.index', compact('pessoa'));
+        return redirect()->route('pessoa.index', compact('pessoa'));
     }
 
     public function destroy($id)
@@ -68,7 +68,6 @@ class PessoasController extends Controller
         if (isset($pessoa)) {
             $pessoa->delete();
         }
-            return redirect()->route('pessoa.index');
-
+        return redirect()->route('pessoa.index');
     }
 }

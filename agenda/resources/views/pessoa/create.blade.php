@@ -5,6 +5,7 @@
     <form id="frmpessoa" name="frmpessoa" action="{{ route('pessoa.store') }}" method="POST">
         @csrf
         <div class="row">
+            {{-- nome --}}
             <div class="form-group col">
                 <label for="nome">Nome</label>
                 <input type="text" class="form-control {{ $errors->has('nome') ? 'is-invalid' : ''}}" id="nome"
@@ -15,7 +16,7 @@
                 </div>
                 @endif
             </div>
-
+            {{-- sobrenome --}}
             <div class="form-group col">
                 <label for="sobrenome">Sobrenome</label>
                 <input type="text" class="form-control {{ $errors->has('sobrenome') ? 'is-invalid' : ''}}"
@@ -29,6 +30,7 @@
         </div>
 
         <div class="row">
+            {{-- telefone --}}
             <div class="form-group col">
                 <label for="telefone">Telefone</label>
                 <input type="text" class="form-control {{ $errors->has('telefone') ? 'is-invalid' : ''}}" id="telefone"
@@ -41,7 +43,6 @@
             </div>
 
             {{-- turma --}}
-
             <div class="form-group col">
                 <label for="turma_id">Turma</label>
                 <select class="form-control" id="turma_id" name="turma_id">
