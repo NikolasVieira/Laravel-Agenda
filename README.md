@@ -1,2 +1,2 @@
 # LaravelAgenda
- Laravel feito em aula
+CRUD feito em Laravel exemplificando uma agenda basica
