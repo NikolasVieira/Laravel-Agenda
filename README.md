@@ -1,2 +1,2 @@
 # Laravel Agenda
-CRUD feito em Laravel exemplificando uma agenda basica
+CRUD feito em Laravel exemplificando uma agenda básica
